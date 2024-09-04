@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="projectEMS.master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .ustMenu {
+            list-style-type: none;
+            background-color: #0080C0;
+            position: fixed;
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            width: 100%;
+            height: 46px;
+            margin: 0 auto;
+            top: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+            .ustMenu li {
+                float: left;
+            }
+
+                .ustMenu li a {
+                    display: block;
+                    font-weight: bold;
+                    color: white;
+                    text-decoration: none;
+                    margin: auto;
+                    padding-top: 10px;
+                    padding-right: 20px;
+                    padding-bottom: 10px;
+                    padding-left: 20px;
+                    background-color: #0080C0;
+                    height: 26px;
+                }
+
+
+                    .ustMenu li a:hover {
+                        color: #FFF;
+                        background-color: #c1bd1d;
+                    }
+
+        .logout-button {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0px 40px; /* Adjust padding as needed */
+            margin-left: auto; /* Push the button to the right */
+            z-index: 9999;
+            height: 46px;
+            border: none;
+            background-color: #0080C0;
+            color: white;
+            text-decoration: underline;
+            font-size: 14pt;
+        }
+
+            .logout-button:hover {
+                background-color: #c1bd1d;
+            }
+
+        .logo {
+            z-index: 9999;
+            margin-left: 10px;
+        }
+
+        .vl {
+            border-left: 3px solid #0080C0;
+            height: 100%;
+            position: absolute;
+            left: 50%;
+            margin-left: 0px;
+            top: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="scrptGeneral" runat="server"></asp:ScriptManager>
+        <header>
+            <div class="ustMenu" style="width: 100%; left: 0px; z-index: 1">
+                <img src="Images1/tprlogo1.png" class="logo" />
+                <ul class="ustMenu">
+                    <li><a id="profile" href="Profile.aspx">Profile</a></li>
+                    <li><a id="employees" href="Employees.aspx">Employees</a></li>
+                    <li><a id="projects" href="Projects.aspx">Projects</a></li>
+                </ul>
+                <asp:Button ID="btnLogout" runat="server" Text="Log out" CssClass="logout-button" OnClick="btnLogout_Click" />
+            </div>
+        </header>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <footer id="footer" style="background-color: grey; left: 0px; text-align: center; position: fixed; bottom: 0px; width: 100%; margin-top: 50px; font-size: 14px">
+            <ul>
+                <li style="list-style-type: none"><a href="ContactUs.aspx">Contact</a></li>
+                <li style="list-style-type: none"><a href="#">About Us</a></li>
+            </ul>
+            &copy; All Rights Reserved
+            <br />
+            <br />
+        </footer>
+    </form>
+</body>
+</html>
